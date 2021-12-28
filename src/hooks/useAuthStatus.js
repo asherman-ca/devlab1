@@ -17,6 +17,7 @@ export const useAuthStatus = () => {
       })
     }
 
+    // this is here only to prevent memory leak - see below
     return () => {
       isMounted.current = false
     }
