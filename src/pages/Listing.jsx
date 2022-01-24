@@ -40,6 +40,7 @@ function Listing() {
       <div
         className='shareIconDiv'
         onClick={() => {
+          // copies url to users clipboard
           navigator.clipboard.writeText(window.location.href)
           setShareLinkCopied(true)
           setTimeout(() => {
