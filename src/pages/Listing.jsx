@@ -93,6 +93,7 @@ function Listing() {
 
         {/* MAP */}
 
+        {/* The ? appended to currentUser? prevents an error if its null - pretty cool */}
         {auth.currentUser?.uid !== listing.userRef && (
           <Link
             to={`/contact/${listing.userRef}?listingName=${listing.name}`}
