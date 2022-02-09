@@ -153,6 +153,7 @@ function Profile() {
           <img src={arrowRight} alt='arrow right' />
         </Link>
 
+        {/* The ? on listings prevents null errors */}
         {!loading && listings?.length > 0 && (
           <>
             <p className='listingText'>Your Listings</p>
