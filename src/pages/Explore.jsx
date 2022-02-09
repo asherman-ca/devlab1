@@ -36,5 +36,4 @@ function Explore() {
     </div>
   )
 }
-// comment
 export default Explore
