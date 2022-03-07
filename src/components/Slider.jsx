@@ -15,6 +15,7 @@ function Slider() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    // put everything inside fetchListings cuz async
     const fetchListings = async () => {
       const listingsRef = collection(db, 'listings')
       const q = query(listingsRef, orderBy('timestamp', 'desc'), limit(5))
@@ -23,7 +24,8 @@ function Slider() {
       let listings = []
 
       querySnap.forEach((doc) => {
-        return listings.push({
+        // original syntax: return listings.push({...
+        listings.push({
           id: doc.id,
           data: doc.data(),
         })
@@ -46,6 +48,7 @@ function Slider() {
         <p className='exploreHeading'>Recommended</p>
 
         <Swiper slidesPerView={1} pagination={{ clickable: true }}>
+          {/* descructures data and id out of each listing */}
           {listings.map(({ data, id }) => (
             <SwiperSlide
               key={id}
